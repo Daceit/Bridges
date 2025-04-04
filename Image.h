@@ -20,7 +20,7 @@ class Image {
         // pointer to the dynamically allocated image array
 		int *image_array;
 
-		// you will need an array to hold the processed results
+		// you will need an arrayaaa to hold the processed results
 		int *processed_array;
 
 	public:
