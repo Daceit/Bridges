@@ -1,4 +1,4 @@
-SRCS = ImageProcess.cpp
+SRCS = a.out
 EXE=ImageProcess
 
 
@@ -20,7 +20,7 @@ LIBS =  -lcurl -l bridges
 $(EXE): $(OBJS)
 	$(CXX) -o $(EXE) $(OBJS) $(LDFLAGS) $(LIBS)
 
-.SUFFIXES: .cpp
+.SUFFIXES: .cpp .cc
 
 .cpp.o:  
 	$(CXX) $(CXXFLAGS) -c $< -o $@
