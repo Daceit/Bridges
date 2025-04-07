@@ -39,22 +39,61 @@ class Image {
 		}
         // TO DO: you might need setters/getters for accessing data items,
 		// image pixel, etc
+		int getWidth() const { return width; }
+		int getHeight() const { return height; }
 
 		// reads an image from  the given input image file
 		void read(string file_name) {
+		ifstream infile(IMG_8568.ppm);
+		if (!infile){
+			cerr << "Error: Cant Read File." << endl;
+			return;
 		}
+		
+		infile >> width >> hight >> maxVal;
+		image_array = new int [width * hight * 3];
 
+		for (int i = 0; i < width * height * 3; ++i){
+			infile >> image_array[i];	
+		}
+		}
 		// writes image to the Bridges colorgrid for visualization
 		void setColorGrid (ColorGrid& cg) {
+			for (int row = 0; row < hight; ++row){
+				for (int col = 0; col < width; ++col){
+					int idx =  (row * width + col) * 3;
+					int r = image_array[idx];
+					int g = image_array[idx + 1];
+					int b = image_array[idx + 2];
+					cg.set(row, col, Color(r, g, b));
+			}
 		}
+	}
 
 		// convert to grayscale
 		void toGrayscale () {
+			for (int i = 0; i width * hight; ++i) {
+				int idx = i * 3;
+				int r = image_array[idx];
+				int g = image_array[idx + 1];
+				int b = image_array[idx + 2];
+				int gray = (r + g + b) / 3;
+				image_array[idx] = gray;
+				image_array[idx + 1] = gray;
+				image_array[idx + 2] = gray;
 		}
+	}
 		// flip image horizontally
 		void flipHorizontal() {
-		}
-
+			for (int row = 0; row < height; ++row) {
+				for (int col = 0; col < width / 2; ++col) {
+					int left_idx = (row * width + col) * 3;
+					int right_idx = (row * width + (width - 1 - col)) * 3;
+					for (int k = 0; k < 3; ++k) {
+						swap(image_array[left_idx + k], image_array[right_idx + k]);
+					}
+			}	
+	}
 		// remove the blue component
 		void flattenBlue() {
 		}
