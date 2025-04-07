@@ -20,7 +20,7 @@ class Image {
         // pointer to the dynamically allocated image array
 		int *image_array;
 
-		// you will need an array to hold the processed results
+		// you will need an arrayaaa to hold the processed results
 		int *processed_array;
 
 	public:
@@ -29,6 +29,7 @@ class Image {
 		}
         // creates an image object by reading the input image
 		Image(string input_file){
+
 		};
         //creates an image object using the given dimensions
 		Image(int width, int height) {
@@ -96,10 +97,22 @@ class Image {
 	}
 		// remove the blue component
 		void flattenBlue() {
+			for (int i = 0; i width * hight; ++i) {
+				int idx = i * 3;
+
+				image_array[idx + 2] = 0;
+		}
+
 		}
 
 		// use the complement of red (wraparound)
 		void negateRed() {
+			int idx = i * 3;
+
+			 image_array[idx] -= 255
+
+		     image array[idx] * -1;
+
 		}
 
 		// reads a new image and blends with existing image
