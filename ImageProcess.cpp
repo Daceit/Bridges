@@ -4,7 +4,7 @@ using namespace bridges;
 
 int main() {
 
-	Bridges bridges(1, Madzilla23, 164634117883);
+	Bridges bridges(1,"Madzilla23", "16463411788"3);
 
 	bridges.setTitle("Image Processing");
 	bridges.setDescription("Students are provided with sample images in a simple text format that they read and display using the ColorGrid datatype.");
