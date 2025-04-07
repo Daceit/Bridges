@@ -99,6 +99,7 @@ class Image {
 		void flattenBlue() {
 			for (int i = 0; i width * hight; ++i) {
 				int idx = i * 3;
+
 				image_array[idx + 2] = 0;
 		}
 
@@ -107,7 +108,9 @@ class Image {
 		// use the complement of red (wraparound)
 		void negateRed() {
 			int idx = i * 3;
+
 			 image_array[idx] -= 255
+
 		     image array[idx] * -1;
 
 		}
