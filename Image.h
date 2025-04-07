@@ -50,8 +50,8 @@ class Image {
 			return;
 		}
 		
-		infile >> width >> hight >> maxVal;
-		image_array = new int [width * hight * 3];
+		infile >> width >> height >> maxVal;
+		image_array = new int [width * height * 3];
 
 		for (int i = 0; i < width * height * 3; ++i){
 			infile >> image_array[i];	
@@ -59,7 +59,7 @@ class Image {
 		}
 		// writes image to the Bridges colorgrid for visualization
 		void setColorGrid (ColorGrid& cg) {
-			for (int row = 0; row < hight; ++row){
+			for (int row = 0; row < height; ++row){
 				for (int col = 0; col < width; ++col){
 					int idx =  (row * width + col) * 3;
 					int r = image_array[idx];
@@ -72,7 +72,7 @@ class Image {
 
 		// convert to grayscale
 		void toGrayscale () {
-			for (int i = 0; i width * hight; ++i) {
+			for (int i = 0; i < width * height; ++i) {
 				int idx = i * 3;
 				int r = image_array[idx];
 				int g = image_array[idx + 1];
@@ -104,7 +104,8 @@ class Image {
 
 		// reads a new image and blends with existing image
 		void blend (string file_name, float blend_factor) {
-		}
+			{
+				{
 };
 
 #endif
