@@ -25,7 +25,7 @@ class Image {
 
 	public:
 		// constructor - creates an empty image object,
-		Image() {
+		Image(int nW, int nH,int nV, int *nIa,int *nPa) : width(nW), height(nH),maxVal(nV), image_array(nIa),processed_array(nPa)  {
 		}
         // creates an image object by reading the input image
 		Image(string input_file){
