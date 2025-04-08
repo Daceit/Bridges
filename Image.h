@@ -30,7 +30,7 @@ class Image {
         // creates an image object by reading the input image
 		Image(string input_file){
 
-		};
+		}
         //creates an image object using the given dimensions
 		Image(int width, int height) {
 		}
@@ -45,7 +45,7 @@ class Image {
 
 		// reads an image from  the given input image file
 		void read(string file_name) {
-		ifstream infile(IMG_8568.ppm);
+		ifstream infile("IMG_8464.ppm");
 		if (!infile){
 			cerr << "Error: Cant Read File." << endl;
 			return;
@@ -95,9 +95,10 @@ class Image {
 					}
 			}	
 	}
+		}
 		// remove the blue component
 		void flattenBlue() {
-			for (int i = 0; i width * hight; ++i) {
+			for (int i = 0; i < width * height; ++i) {
 				int idx = i * 3;
 
 				image_array[idx + 2] = 0;
@@ -107,18 +108,20 @@ class Image {
 
 		// use the complement of red (wraparound)
 		void negateRed() {
+			for (int i = 0; i < width * height; ++i) {
 			int idx = i * 3;
 
-			 image_array[idx] -= 255
+			 image_array[idx] -= 255;
 
-		     image array[idx] * -1;
+		     image_array[idx] * -1;
 
 		}
-
+		}
 		// reads a new image and blends with existing image
 		void blend (string file_name, float blend_factor) {
-			{
-				{
+			
+			}
+		
 };
 
 #endif
