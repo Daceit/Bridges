@@ -45,7 +45,7 @@ class Image {
 
 		// reads an image from  the given input image file
 		void read(string file_name) {
-		ifstream infile("IMG_8464.ppm");
+		ifstream infile(file_name);
 		if (!infile){
 			cerr << "Error: Cant Read File." << endl;
 			return;
@@ -119,7 +119,8 @@ class Image {
 		}
 		// reads a new image and blends with existing image
 		void blend (string file_name, float blend_factor) {
-			
+			read (file_name);
+
 			}
 		
 };
