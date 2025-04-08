@@ -1,4 +1,4 @@
-SRCS = Image.h ImageProcess.cpp IMG_6464.ppm Img.txt
+SRCS = Image.h ImageProcess.cpp Img.txt
 EXE=ImageProcess
 
 
