@@ -1,5 +1,5 @@
 SRCS = Image.h ImageProcess.cpp Img.txt
-EXE=ImageProcess
+EXE = ImageProcess
 
 
 # Everything below that should not have to change ever.
