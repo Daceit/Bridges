@@ -1,9 +1,9 @@
-#include "Image.h"
+include "Image.h"
 
 using namespace bridges;
 int main() {
 
-	Bridges bridges(1, "Madzilla23", "765753182009");
+	Bridges bridges(1, "Madzilla23", "563071690846");
 	bridges.setTitle("Image Processing");
 	bridges.setDescription("Students are provided with sample images in a simple text format that they read and display using the ColorGrid datatype.");
 	ColorGrid *cg = new ColorGrid();
